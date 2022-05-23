@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/davide/Documenti/Codici/42/C++/Module00/ex01'
+g++    -c -o Contact.o Contact.cpp
+g++    -c -o PhoneBook.o PhoneBook.cpp
+g++    -c -o main.o main.cpp
+c++ -Wall -Werror -Wextra -g Contact.cpp PhoneBook.cpp main.cpp -o PhoneBook
+make: Leaving directory '/home/davide/Documenti/Codici/42/C++/Module00/ex01'
+ 
