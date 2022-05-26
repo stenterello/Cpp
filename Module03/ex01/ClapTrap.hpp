@@ -5,12 +5,13 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_health;
 		int			_energy;
 		int			_attack_dmg;
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & rhs);
 		~ClapTrap();
@@ -27,5 +28,7 @@ class ClapTrap
 		void		setEnergy(unsigned int amount);
 		void		setAttackDamage(unsigned int amount);
 };
+
+std::ostream&	operator<<(std::ostream os, ClapTrap& src);
 
 #endif

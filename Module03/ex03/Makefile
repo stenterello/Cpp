@@ -1,7 +1,10 @@
-NAME=ClapTrap
+NAME=DiamondTrap
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -Wshadow -Wno-shadow
 SRCS=ClapTrap.cpp \
+	ScavTrap.cpp \
+	FragTrap.cpp \
+	DiamondTrap.cpp \
 	main.cpp
 OBJS=$(SRCS:.cpp=.o)
 

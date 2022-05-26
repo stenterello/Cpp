@@ -1,7 +1,8 @@
-NAME=ClapTrap
+NAME=ScavTrap
 CC=c++
 FLAGS=-Wall -Werror -Wextra
 SRCS=ClapTrap.cpp \
+	ScavTrap.cpp \
 	main.cpp
 OBJS=$(SRCS:.cpp=.o)
 

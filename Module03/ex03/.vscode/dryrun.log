@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex03'
+g++    -c -o ClapTrap.o ClapTrap.cpp
+g++    -c -o ScavTrap.o ScavTrap.cpp
+g++    -c -o FragTrap.o FragTrap.cpp
+g++    -c -o DiamondTrap.o DiamondTrap.cpp
+g++    -c -o main.o main.cpp
+c++ -Wall -Werror -Wextra -Wshadow -Wno-shadow ClapTrap.o ScavTrap.o FragTrap.o DiamondTrap.o main.o -o DiamondTrap
+make: Leaving directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex03'
+ 

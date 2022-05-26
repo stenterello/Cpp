@@ -1,6 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack_dmg(0)
+ClapTrap::ClapTrap(void) : _name("no name"), _health(100), _energy(50), _attack_dmg(20)
+{
+	std::cout << "ClapTrap with " << this->getName() << " has been constructed!" << std::endl; 
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name), _health(100), _energy(50), _attack_dmg(20)
 {
 	std::cout << "ClapTrap " << name << " has been constructed!" << std::endl;
 }

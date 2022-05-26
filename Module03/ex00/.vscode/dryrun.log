@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex00'
+c++ -Wall -Werror -Wextra ClapTrap.o main.o -o ClapTrap
+make: Leaving directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex00'
+ 
