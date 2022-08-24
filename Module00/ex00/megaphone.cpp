@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:13:14 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/05/15 16:13:16 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:11:44 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 void	capitalize(char *str)
 {
@@ -19,8 +20,8 @@ void	capitalize(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 97 && str[i] <= 122)
-			str[i] -= 32;
+		if (islower(str[i]))
+			str[i] = toupper(str[i]);
 		i++;
 	}
 }
@@ -37,6 +38,8 @@ int	main(int argc, char **argv)
 			capitalize(argv[i]);
 			std::cout << argv[i];
 			i++;
+			if (argv[i])
+				std::cout << " ";
 		}
 		std::cout << "\n";
 	}

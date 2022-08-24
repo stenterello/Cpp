@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:12:49 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/05/15 16:12:50 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:42:07 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook()
-{
-	this->older = 0;
-}
+PhoneBook::PhoneBook() : _older(0)
+{}
 
 PhoneBook::~PhoneBook()
 {}
 
 void	PhoneBook::add_contact(void)
 {
-	contacts[this->older].insert_info();
-	this->older = (this->older + 1) % 8;
+	if (_contacts[this->_older].insertInfo(_older))
+		this->_older = (this->_older + 1) % 8;
 }
 
 void	PhoneBook::display(void)
@@ -34,9 +32,17 @@ void	PhoneBook::display(void)
 	i = 0;
 	while (i < 8)
 	{
-		j = 0;
-		while (j < 5)
-			std::cout << contacts[i].get_portion(j++) << " | ";
+		j = -1;
+		while (j < 3)
+		{
+			if (j == -1 && _contacts[i].exists())
+				std::cout << _contacts[i].getIndex() << " | ";
+			else if (j == -1 && !_contacts[i].exists())
+				std::cout << "  | ";
+			else
+				std::cout << _contacts[i].getPortion(j) << " | ";
+			j++;
+		}
 		std::cout << "\n";
 		i++;
 	}

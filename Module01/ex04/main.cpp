@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 	Sed	sed(argv[1], argv[2], argv[3]);
 	try
 	{
-		sed.openStreams(argv[1], argv[2], argv[3]);
+		sed.openStreams();
 	}
 	catch(char const *e)
 	{

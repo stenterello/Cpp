@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 12:59:42 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/08/24 13:11:48 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack_dmg(0)
@@ -7,7 +19,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _a
 
 ClapTrap::ClapTrap(ClapTrap const & rhs)
 {
-	std::cout << "ClapTrap " << this->getName() << " has been constructed!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " has been copy constructed!" << std::endl;
 	*this = rhs;	
 }
 
@@ -70,6 +82,7 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs)
 
 void	ClapTrap::attack(const std::string& target)
 {
+	this->setAttackDamage(this->getAttackDamage() + 1);
 	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 	this->setEnergy(this->getEnergy() - 1);
 }

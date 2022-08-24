@@ -4,16 +4,19 @@
 
 class Zombie
 {
+	private:
+		std::string	_name;
 	public:
 		Zombie(std::string s);
 		Zombie();
 		~Zombie();
-		void				announce(void) const;
-		std::string			getName(void) const;
-		static Zombie*		zombieHorde(int N, std::string name);
-	private:
-		std::string	_name;
+		void		announce(void) const;
+		std::string	getName(void) const;
+		void		setName(std::string name);
 };
 
+Zombie		*newZombie(std::string name);
+void		randomChump(std::string name);
+Zombie		*zombieHorde(int N, std::string name);
 
 #endif

@@ -1,5 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex02'
-make: 'FragTrap' is up to date.
-make: Leaving directory '/home/davide/Documenti/Codici/42/Cpp/Module03/ex02'
- 

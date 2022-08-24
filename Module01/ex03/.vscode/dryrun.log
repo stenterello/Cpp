@@ -1,9 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/davide/Documenti/Codici/42/C++/Module01/ex03'
-g++    -c -o main.o main.cpp
-g++    -c -o Weapon.o Weapon.cpp
-g++    -c -o HumanA.o HumanA.cpp
-g++    -c -o HumanB.o HumanB.cpp
-c++ -Wall -Werror -Wextra main.o Weapon.o HumanA.o HumanB.o -o Unnecessary\ violence
-make: Leaving directory '/home/davide/Documenti/Codici/42/C++/Module01/ex03'
- 

@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 12:59:42 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/08/24 14:33:21 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("no name"), _health(100), _energy(50), _attack_dmg(20)
+ClapTrap::ClapTrap(void) : _name("noname"), _health(10), _energy(10), _attack_dmg(0)
 {
-	std::cout << "ClapTrap with " << this->getName() << " has been constructed!" << std::endl; 
+	std::cout << "ClapTrap noname has been constructed with default constructor!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _health(100), _energy(50), _attack_dmg(20)
+ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack_dmg(0)
 {
 	std::cout << "ClapTrap " << name << " has been constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & rhs)
 {
-	std::cout << "ClapTrap " << this->getName() << " has been constructed!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " has been copy constructed!" << std::endl;
 	*this = rhs;	
 }
 
@@ -69,12 +81,13 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs)
 	this->setHealth(rhs.getHealth());
 	this->setEnergy(rhs.getEnergy());
 	this->setAttackDamage(rhs.getAttackDamage());
-	std::cout << "ClapTrap " << this->getName() << " has been destroyed!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " has been constructed with assignment copy operator!" << std::endl;
 	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
+	this->setAttackDamage(this->getAttackDamage() + 1);
 	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 	this->setEnergy(this->getEnergy() - 1);
 }

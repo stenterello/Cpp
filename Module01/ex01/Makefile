@@ -1,6 +1,6 @@
 NAME=Moar\ brainz!
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRCS=main.cpp \
 	Zombie.cpp \
 	ZombieHorde.cpp

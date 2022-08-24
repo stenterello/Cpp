@@ -1,39 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 12:43:46 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/08/24 12:52:48 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
-#include <math.h>
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->_n = 0;
 }
 
 Fixed::Fixed(int const n)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_n = n;
 	this->_n <<= this->_nbits;
 }
 
 Fixed::Fixed(float const f)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_n = (int)(roundf(f * (1 << this->_nbits)));
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->_n = rhs._n;
 	return (*this);
@@ -41,13 +46,11 @@ Fixed&	Fixed::operator=(Fixed const & rhs)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_n);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_n = raw;
 }
 

@@ -1,8 +1,8 @@
-NAME=karenFilter
+NAME=harlFilter
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRCS=main.cpp \
-	Karen.cpp
+	Harl.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

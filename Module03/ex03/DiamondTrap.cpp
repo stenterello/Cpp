@@ -1,17 +1,21 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : _name("no_name_clap_name")
 {
-	ClapTrap::_name = "no_name_clap_name";
-	this->_health = FragTrap::_health;
-	this->_energy = ScavTrap::_energy;
-	this->_attack_dmg = FragTrap::_attack_dmg;
+	this->FragTrap::setHealth(FragTrap::getHealth());
+	this->ScavTrap::setEnergy(ScavTrap::getEnergy());
+	this->FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	ClapTrap::setName(_name + "_clap_name");
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const name)
+DiamondTrap::DiamondTrap(std::string const name) : _name(name)
 {
-	std::cout << "DiamondTrap constructor with name parameter called" << std::endl;
+	this->FragTrap::setHealth(FragTrap::getHealth());
+	this->ScavTrap::setEnergy(ScavTrap::getEnergy());
+	this->FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	ClapTrap::setName(_name + "_clap_name");
+	std::cout << "DiamondTrap " << name << " constructor with name parameter called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & src)
@@ -38,5 +42,5 @@ void	DiamondTrap::attack(std::string const &target)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "My DiamondTrap name is: " << this->getName() << ", and my ClapTrap name is: " << ClapTrap::getName() << std::endl;
+	std::cout << "My DiamondTrap name is: " << this->_name << ", and my ClapTrap name is: " << ClapTrap::getName() << std::endl;
 }

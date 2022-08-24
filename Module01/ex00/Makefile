@@ -1,9 +1,10 @@
 NAME=BraiiiiiiinnnzzzZ
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRCS=Zombie.cpp \
 	newZombie.cpp \
-	randomChump.cpp
+	randomChump.cpp \
+	main.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

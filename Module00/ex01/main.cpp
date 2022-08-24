@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:12:45 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/05/15 16:12:46 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:02:30 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
 
 void	print_cmds(void)
 {

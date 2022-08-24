@@ -1,11 +1,11 @@
 NAME=megaphone
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRC=megaphone.cpp
 OBJS=$(SRC:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

@@ -1,6 +1,6 @@
 NAME=Unnecessary\ violence
 CC=c++
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRCS=main.cpp \
 	Weapon.cpp \
 	HumanA.cpp \

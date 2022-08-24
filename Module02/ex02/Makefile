@@ -1,12 +1,12 @@
 NAME=FixedPointClass
 CC=c++
-FLAGS=-Wall -Werror -Wextra -g
+FLAGS=-Wall -Werror -Wextra -std=c++98
 SRCS=main.cpp \
 	Fixed.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

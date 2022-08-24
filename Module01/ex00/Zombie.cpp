@@ -3,11 +3,13 @@
 Zombie::Zombie(std::string s)
 {
 	this->_name = s;
+	std::cout << "Constructor called on zombie " << s << std::endl;
 }
 
 Zombie::Zombie(void)
 {
 	this->_name = "A zombie without a name";
+	std::cout << "Constructor called on zombie " << this->getName() << std::endl;
 }
 
 Zombie::~Zombie(void)

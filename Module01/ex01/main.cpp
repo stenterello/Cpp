@@ -3,18 +3,19 @@
 
 int	main(int argc, char **argv)
 {
-	Zombie*	horde;
+	Zombie	*horde;
 	char	*string = NULL;
 	int		i;
 
-	if (argc < 2 || argc > 2)
+	if (argc < 2 || argc > 3)
 	{
-		std::cout << "Insert a number of zombies to create. \n\n\tMoar brainz! [number of zombie]" << std::endl;
+		std::cout << "Insert a number of zombies to create. \n\n\tMoar brainz! [number of zombie] [optional: name]" << std::endl;
 		return (1);
 	}
-	Zombie	first = Zombie("first");
-	if (strtol(argv[1], &string, 0) < INT32_MAX)
-		horde = Zombie::zombieHorde(atoi(argv[1]), "nope");
+	if (strtol(argv[1], &string, 0) < INT32_MAX && argc == 3)
+		horde = zombieHorde(atoi(argv[1]), argv[2]);
+	else if (strtol(argv[1], &string, 0) < INT32_MAX)
+		horde = zombieHorde(atoi(argv[1]), "noname");
 	else
 	{
 		std::cout << "Too many zombies" << std::endl;

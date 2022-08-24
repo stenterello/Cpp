@@ -2,15 +2,12 @@
 
 HumanB::HumanB(std::string name) : _name(name), _weap(NULL)
 {
-}
-
-HumanB::HumanB(std::string name, Weapon& weap) : _weap(&weap), _name(name)
-{
+	std::cout << "HumanB constructor called" << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
-
+	std::cout << "HumanB destructor called" << std::endl;
 }
 
 void	HumanB::attack(void) const

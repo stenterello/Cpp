@@ -1,13 +1,13 @@
 NAME=PhoneBook
 CC=c++
-FLAGS=-Wall -Werror -Wextra -g
-SRC=Contact.cpp \
-	PhoneBook.cpp \
+FLAGS=-Wall -Werror -Wextra -std=c++98
+SRC=Contact.class.cpp \
+	PhoneBook.class.cpp \
 	main.cpp
 OBJS=$(SRC:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

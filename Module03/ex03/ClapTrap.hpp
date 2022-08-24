@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 12:59:46 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/08/24 15:54:14 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 # include <string>
@@ -5,13 +17,13 @@
 
 class ClapTrap
 {
-	protected:
+	private:
 		std::string	_name;
 		int			_health;
 		int			_energy;
 		int			_attack_dmg;
 	public:
-		ClapTrap();
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & rhs);
 		~ClapTrap();
@@ -28,7 +40,5 @@ class ClapTrap
 		void		setEnergy(unsigned int amount);
 		void		setAttackDamage(unsigned int amount);
 };
-
-std::ostream&	operator<<(std::ostream& os, ClapTrap& src);
 
 #endif

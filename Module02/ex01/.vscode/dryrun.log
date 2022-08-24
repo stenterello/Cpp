@@ -1,7 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/davide/Documenti/Codici/42/C++/Module02/ex01'
-g++    -c -o main.o main.cpp
-g++    -c -o Fixed.o Fixed.cpp
-c++ -Wall -Werror -Wextra main.o Fixed.o -o FixedPointClass
-make: Leaving directory '/home/davide/Documenti/Codici/42/C++/Module02/ex01'
- 

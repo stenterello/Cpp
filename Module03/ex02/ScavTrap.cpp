@@ -1,34 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 14:06:54 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/08/24 14:42:08 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
 {
-	this->_name = "no name";
-	this->_health = 100;
-	this->_energy = 50;
-	this->_attack_dmg = 20;
-	std::cout << "ScavTrap with " << this->getName() << " has been constructed!" << std::endl;
+	this->setName("no name");
+	this->setHealth(100);
+	this->setEnergy(50);
+	this->setAttackDamage(20);
+	std::cout << "ScavTrap " << this->getName() << " has been constructed!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const name)
 {
-	this->_name = name;
-	this->_health = 100;
-	this->_energy = 50;
-	this->_attack_dmg = 20;
+	this->setName(name);
+	this->setHealth(100);
+	this->setEnergy(50);
+	this->setAttackDamage(20);
 	std::cout << "ScavTrap " << this->getName() << " has been constructed!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	*this = src;
+	std::cout << "ScavTrap " << this->getName() << " has been constructed with copy constructor!" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
-{}
+{
+	std::cout << "ScavTrap " << this->getName() << " has been destroyed!" << std::endl;
+}
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs)
 {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " has been constructed with copy assignment operator" << std::endl;
 	return (*this);
 }
 

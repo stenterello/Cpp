@@ -1,21 +1,21 @@
-NAME=Sed\ is\ for\ losers
-CC=c++
-FLAGS=-Wall -Werror -Wextra
-SRCS=main.cpp \
-	Sed.cpp
-OBJS=$(SRCS:.cpp=.o)
+NAME	=	Sed\ is\ for\ losers
+CC		=	c++
+FLAGS	=	-Wall -Werror -Wextra -std=c++98
+SRCS	=	main.cpp \
+			Sed.cpp
+OBJS	=	$(SRCS:.cpp=.o)
 
-$(NAME): $(OBJS)
+$(NAME)	:	$(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-all: $(NAME)
+all		:	$(NAME)
 
-clean:
+clean	:
 	rm -f $(OBJS)
 
-fclean: clean
+fclean	:	clean
 	rm -f $(NAME)
 
-re: fclean all
+re		:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY	:	all clean fclean re
