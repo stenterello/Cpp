@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:06:54 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 14:42:08 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:32:08 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,13 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs)
 {
-	std::cout << "ScavTrap " << this->getName() << " has been constructed with copy assignment operator" << std::endl;
+	std::cout << "Assignment operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->setName(rhs.getName());
+	this->setAttackDamage(rhs.getAttackDamage());
+	this->setEnergy(rhs.getEnergy());
+	this->setHealth(rhs.getHealth());
 	return (*this);
 }
 

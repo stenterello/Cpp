@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:26:43 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 14:29:23 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:30:17 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ class FragTrap : public ClapTrap
 		FragTrap&	operator=(FragTrap const & rhs);
 		void		highFiveGuys(void);
 };
-
-std::ostream&	operator<<(std::ostream& os, FragTrap& src);
 
 #endif

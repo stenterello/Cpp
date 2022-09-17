@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:07:06 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 15:53:46 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:31:42 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,5 @@ class ScavTrap : virtual public ClapTrap
 		void		attack(std::string const & target);
 		void		guardGate();
 };
-
-std::ostream&	operator<<(std::ostream os, ScavTrap& src);
 
 #endif

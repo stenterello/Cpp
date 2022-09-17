@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:06:54 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 14:24:18 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:23:44 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,19 @@ ScavTrap::ScavTrap(ScavTrap const & src)
 }
 
 ScavTrap::~ScavTrap(void)
-{}
+{
+	std::cout << "ScavTrap " << this->getName() << " has been destroyed!" << std::endl;
+}
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs)
 {
 	std::cout << "Assignment operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->setName(rhs.getName());
+	this->setAttackDamage(rhs.getAttackDamage());
+	this->setEnergy(rhs.getEnergy());
+	this->setHealth(rhs.getHealth());
 	return (*this);
 }
 

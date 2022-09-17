@@ -11,9 +11,9 @@ DiamondTrap::DiamondTrap(void) : _name("no_name_clap_name")
 
 DiamondTrap::DiamondTrap(std::string const name) : _name(name)
 {
-	this->FragTrap::setHealth(FragTrap::getHealth());
-	this->ScavTrap::setEnergy(ScavTrap::getEnergy());
-	this->FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	this->setHealth(FragTrap::getHealth());
+	this->setEnergy(ScavTrap::getEnergy());
+	this->setAttackDamage(FragTrap::getAttackDamage());
 	ClapTrap::setName(_name + "_clap_name");
 	std::cout << "DiamondTrap " << name << " constructor with name parameter called" << std::endl;
 }
@@ -32,6 +32,12 @@ DiamondTrap::~DiamondTrap(void)
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->setName(rhs.ClapTrap::getName());
+	this->setHealth(rhs.FragTrap::getHealth());
+	this->setEnergy(rhs.ScavTrap::getEnergy());
+	this->setAttackDamage(rhs.FragTrap::getAttackDamage());
 	return (*this);
 }
 
