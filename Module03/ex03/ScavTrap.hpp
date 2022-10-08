@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:07:06 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 13:31:42 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:37:52 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap();
 		ScavTrap(std::string const name);
 		ScavTrap(ScavTrap const & src);
-		~ScavTrap();
+		virtual ~ScavTrap();
 		ScavTrap&	operator=(ScavTrap const & rhs);
 		void		attack(std::string const & target);
 		void		guardGate();

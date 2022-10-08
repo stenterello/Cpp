@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : _name("no_name_clap_name")
+DiamondTrap::DiamondTrap(void) : _name("no_name")
 {
 	this->FragTrap::setHealth(FragTrap::getHealth());
 	this->ScavTrap::setEnergy(ScavTrap::getEnergy());
@@ -18,10 +18,10 @@ DiamondTrap::DiamondTrap(std::string const name) : _name(name)
 	std::cout << "DiamondTrap " << name << " constructor with name parameter called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const & src)
+DiamondTrap::DiamondTrap(DiamondTrap const & src) : ClapTrap(), FragTrap(), ScavTrap()
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)

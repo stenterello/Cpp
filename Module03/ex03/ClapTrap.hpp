@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:59:46 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 15:54:14 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:05:56 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & rhs);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap&	operator=(ClapTrap const & rhs);
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);

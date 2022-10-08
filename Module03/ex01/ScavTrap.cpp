@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:06:54 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 13:23:44 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:56:28 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ ScavTrap::ScavTrap(std::string const name)
 	std::cout << "ScavTrap " << this->getName() << " has been constructed!" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap()
 {
 	*this = src;
+	std::cout << "ScavTrap " << this->getName() << " copy constructor has been called" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)

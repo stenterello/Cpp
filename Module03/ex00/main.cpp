@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:59:49 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 13:25:46 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:52:54 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	ClapTrap	first("first");
 	ClapTrap	second("second");

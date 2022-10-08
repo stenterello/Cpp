@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:26:39 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 14:44:29 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:59:52 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap(std::string const name)
 	std::cout << "Fragtrap " << this->getName() << " constructor has been called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap()
 {
 	*this = src;
 	std::cout << "FragTrap " << this->getName() << " copy constructor has been called" << std::endl;

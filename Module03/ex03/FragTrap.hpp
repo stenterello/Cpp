@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:26:43 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 13:31:36 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:37:45 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap();
 		FragTrap(std::string const name);
 		FragTrap(FragTrap const & src);
-		~FragTrap();
+		virtual ~FragTrap();
 		FragTrap&	operator=(FragTrap const & rhs);
 		void		highFiveGuys(void);
 };

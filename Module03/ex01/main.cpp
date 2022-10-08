@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:07:11 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/08/24 14:24:43 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 02:55:11 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	main( void )
 {
 	{
+		ClapTrap	*ptr = new ScavTrap("new");
+		ptr->attack("target");
 		ScavTrap sc4vtp("sc4vtp");
 		sc4vtp.attack("Handsome Jack");
 		sc4vtp.takeDamage(6);
@@ -23,6 +25,7 @@ int	main( void )
 		sc4vtp.guardGate();
 		sc4vtp.beRepaired(8);
 		sc4vtp.takeDamage(17);
+		delete ptr;
 	}
 	{
 		ClapTrap cl4ptp("cl4ptp");
