@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 14:27:46 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 17:12:52 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:41:14 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.class.hpp"
 
-Dog::Dog()
+Dog::Dog() : _brain(new Brain())
 {
 	std::cout << "Dog constructor has been called" << std::endl;
 	this->setType("Dog");
-	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & src)
+Dog::Dog(Dog const & src) : Animal(), _brain(new Brain())
 {
 	std::cout << "Copy constructor has been called on Dog class" << std::endl;
 	this->setType(src.getType());
-	this->_brain = new Brain();
 	copyBrain(src.getBrain());
 }
 
@@ -39,7 +37,14 @@ Dog&	Dog::operator=(Dog const & rhs)
 	if (this == &rhs)
 		return (*this);
 	this->setType(rhs.getType());
+	this->_brain = new Brain();
+	this->copyBrain(rhs.getBrain());
 	return (*this);
+}
+
+void	Dog::makeSound(void) const
+{
+	std::cout << "Woof woof" << std::endl;
 }
 
 void	Dog::printBrain(void) const

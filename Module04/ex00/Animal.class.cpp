@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:54:08 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 14:49:44 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:17:39 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,7 @@ void	Animal::setType(std::string type)
 
 void	Animal::makeSound(void) const
 {
-	if (!this->getType().compare("Cat"))
-		std::cout << "Meow" << std::endl;
-	else if (!this->getType().compare("Dog"))
-		std::cout << "Woof" << std::endl;
-	else
-		std::cout << "No animal type matching in my universe" << std::endl;
+	std::cout << "No animal type matching in my universe" << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& os, Animal const & an)

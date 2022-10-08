@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 14:15:17 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 14:49:42 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:18:46 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat()
 	this->setType("Cat");
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(Cat const & src) : Animal()
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->setType(src.getType());
@@ -35,6 +35,11 @@ Cat&	Cat::operator=(Cat const & rhs)
 		return (*this);
 	this->setType(rhs.getType());
 	return (*this);
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meow meow" << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& os, Cat const & c)

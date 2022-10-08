@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:53:51 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 14:50:00 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:17:23 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog(Dog const & src);
-		virtual ~Dog();
+		~Dog();
 		Dog&	operator=(Dog const & rhs);
+		void	makeSound(void) const;
 };
 
 std::ostream&	operator<<(std::ostream& os, Dog const & d);

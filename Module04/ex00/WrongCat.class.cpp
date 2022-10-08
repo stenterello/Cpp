@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:36:28 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 15:57:49 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:11:21 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongCat::WrongCat()
 	this->setType("WrongCat");
 }
 
-WrongCat::WrongCat(WrongCat const & src)
+WrongCat::WrongCat(WrongCat const & src) : WrongAnimal()
 {
 	std::cout << "Copy constructor called on WrongCat" << std::endl;
 	this->setType(src.getType());

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:37:50 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 17:40:01 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:34:03 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@
 
 class Cure : public AMateria
 {
-
+	public:
+		Cure();
+		Cure(std::string const & type);
+		Cure(Cure const & src);
+		Cure&	operator=(Cure const & rhs);
+		~Cure();
+		void	use(ICharacter& target);
 };
 
 #endif

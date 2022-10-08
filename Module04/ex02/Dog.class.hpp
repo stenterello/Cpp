@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:53:51 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 17:13:57 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:32:15 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog : public Animal
 		void	printBrain(void) const;
 		Brain*	getBrain() const;
 		void	copyBrain(Brain* b);
+		void	makeSound(void) const;
 };
 
 #endif

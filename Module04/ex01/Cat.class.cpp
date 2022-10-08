@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 14:15:17 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/09/17 17:12:07 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:42:30 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.class.hpp"
 
-Cat::Cat()
+Cat::Cat() : _brain(new Brain())
 {
 	std::cout << "Cat constructor has been called" << std::endl;
 	this->setType("Cat");
-	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(Cat const & src) : Animal(), _brain(new Brain())
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->setType(src.getType());
+	this->copyBrain(src.getBrain());
 }
 
 Cat::~Cat()
@@ -36,7 +36,14 @@ Cat&	Cat::operator=(Cat const & rhs)
 	if (this == &rhs)
 		return (*this);
 	this->setType(rhs.getType());
+	this->_brain = new Brain();
+	this->copyBrain(rhs.getBrain());
 	return (*this);
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Woof woof" << std::endl;
 }
 
 void	Cat::printBrain(void) const
