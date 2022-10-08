@@ -1,7 +1,11 @@
-NAME	=	Animal
+NAME	=	Interfaces
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 SRC		=	AMateria.class.cpp \
+			Character.class.cpp \
+			Cure.class.cpp \
+			Ice.class.cpp \
+			MateriaSource.class.cpp \
 			main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:37:47 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/08 18:36:13 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 21:05:08 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cure::Cure() : AMateria("cure")
 	std::cout << "Default constructor called on Cure" << std::endl;
 }
 
-Cure::Cure(std::string const & type) : AMateria(type)
+Cure::Cure(std::string const & type) : AMateria(convertToTypeStr(type))
 {
 	std::cout << "Constructor called on Cure" << std::endl;
 }
@@ -39,6 +39,11 @@ Cure&	Cure::operator=(Cure const & rhs)
 Cure::~Cure()
 {
 	std::cout << "Destructor called on Cure" << std::endl;
+}
+
+AMateria*	Cure::clone() const
+{
+	return (new Cure(this->getType()));
 }
 
 void	Cure::use(ICharacter & target)

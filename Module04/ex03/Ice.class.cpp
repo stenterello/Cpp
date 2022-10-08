@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:37:54 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/08 18:35:38 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 21:03:53 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Ice::Ice() : AMateria("ice")
 	std::cout << "Default constructor called on Ice" << std::endl;
 }
 
-Ice::Ice(std::string const & type) : AMateria(type)
+Ice::Ice(std::string const & type) : AMateria(convertToTypeStr(type))
 {
 	std::cout << "Constructor called on Ice" << std::endl;
 }
@@ -44,4 +44,18 @@ Ice::~Ice()
 void	Ice::use(ICharacter & target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+AMateria*	Ice::clone() const
+{
+	return (new Ice(this->getType()));
+}
+
+std::string	convertToTypeStr(std::string s)
+{
+	std::string	ret;
+
+	ret = s;
+	ret[0] = tolower(ret[0]);
+	return (ret);
 }

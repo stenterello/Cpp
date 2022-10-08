@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:37:57 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/08 18:33:57 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 21:04:15 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class Ice : public AMateria
 		Ice(Ice const & src);
 		Ice&	operator=(Ice const & rhs);
 		~Ice();
-		void	use(ICharacter& target);
+		void		use(ICharacter& target);
+		AMateria*	clone() const;
 };
 
 #endif

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.class.hpp                               :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 17:38:21 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/08 22:09:01 by ddelladi         ###   ########.fr       */
+/*   Created: 2022/10/08 19:16:56 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/10/08 19:22:39 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_CLASS_HPP
-# define ICHARACTER_CLASS_HPP
-# include <iostream>
-# include "AMateria.class.hpp"
+#include "Bureaucrat.hpp"
 
-class AMateria;
-
-class ICharacter
+int	main()
 {
-	public:
-		virtual ~ICharacter() {};
-		virtual std::string const &	getName() const = 0;
-		virtual void				equip(AMateria* m) = 0;
-		virtual void				unequip(int idx) = 0;
-		virtual void				use(int idx, ICharacter& target) = 0;
-};
+	Bureaucrat	b("Carlo", 1);
 
-#endif
+	try
+	{
+		b.incrementGrade(1);
+	}
+	catch (std::exception & e)
+	{
+		
+	}
+	return (0);
+}
