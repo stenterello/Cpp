@@ -6,14 +6,12 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:16:56 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 21:28:15 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 23:17:34 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
@@ -77,6 +75,20 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+	try
+	{
+		Intern	l;
+		AForm*	n;
+		n = l.makeForm("ShrubberyCreationForm", "my target");
+		std::cout << n->getName() << std::endl;
+		std::cout << n->getTarget() << std::endl;
+		delete n;
+		n = l.makeForm("Non-existent", "my target");
+		delete n;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }

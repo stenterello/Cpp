@@ -8,7 +8,7 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/Module04/ex03/Interfaces",
+			"program": "${workspaceFolder}/Module05/ex03/Bureaucrat",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}/Module04/ex03/",
