@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:44:45 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/08 21:37:00 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/08 22:15:06 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ Character::~Character()
 {
 	std::cout << "Destructor called on Character" << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete this->_inv[i];
+	{
+		if (this->_inv[i])
+			delete this->_inv[i];
+	}
 }
 
 std::string const & Character::getName() const

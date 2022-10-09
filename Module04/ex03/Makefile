@@ -1,6 +1,6 @@
 NAME	=	Interfaces
 CC		=	c++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98
+FLAGS	=	-Wall -Werror -Wextra -std=c++98 -g -Wno-shadow -Wshadow
 SRC		=	AMateria.class.cpp \
 			Character.class.cpp \
 			Cure.class.cpp \
