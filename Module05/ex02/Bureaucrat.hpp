@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:54:13 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:34:34 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:36:32 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
 		void		incrementGrade(int amount);
 		void		decrementGrade(int amount);
 		void		signForm(AForm & f);
-		void		executeForm(Form const & form);
+		void		executeForm(AForm const & form);
 		class GradeTooLowException : public std::exception
 		{
 			public:

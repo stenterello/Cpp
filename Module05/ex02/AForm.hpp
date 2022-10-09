@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:12:55 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:33:36 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 21:18:50 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define AFORM_HPP
 class AForm;
 # include "Bureaucrat.hpp"
+# include <fstream>
+# include <cstdlib>
 
 class AForm
 {
@@ -28,12 +30,13 @@ class AForm
 		AForm(AForm const & src);
 		AForm&	operator=(AForm const & rhs);
 		virtual ~AForm();
-		std::string	getName() const;
-		bool		getStatus() const;
-		int			getMinGradeToSign() const;
-		int			getMinGradeToExecute() const;
-		void		beSigned(Bureaucrat const & b);
-		void		execute(Bureaucrat const & executor) const;
+		std::string			getName() const;
+		bool				getStatus() const;
+		int					getMinGradeToSign() const;
+		int					getMinGradeToExecute() const;
+		void				beSigned(Bureaucrat const & b);
+		virtual std::string	getTarget() const = 0;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -55,7 +58,15 @@ class AForm
 			public:
 				virtual const char * what() const throw()
 				{
-					return ("Bureaucrat Exception: grade too high");
+					return ("Form Exception: form is already signed");
+				}
+		};
+		class NotSignedYet : public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("Form Exception: form is not yet signed. You can't execute");
 				}
 		};
 };

@@ -6,15 +6,15 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:17:59 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:26:24 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:47:17 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	private:
 		ShrubberyCreationForm();
@@ -25,6 +25,16 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(ShrubberyCreationForm const & src);
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & rhs);
 		~ShrubberyCreationForm();
+		std::string	getTarget() const;
+		void		execute(Bureaucrat const & executor) const;
+		class OpenFileError : public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("ShrubberyCreationForm Exception: error while opening file");
+				}
+		};
 };
 
 #endif

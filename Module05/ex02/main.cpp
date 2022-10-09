@@ -6,11 +6,14 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:16:56 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:15:14 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 21:20:18 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
@@ -35,26 +38,33 @@ int	main()
 	}
 	try
 	{
-		Bureaucrat	c = b;
-		std::cout << c;
+		ShrubberyCreationForm	s("prova");
+		b.signForm(s);
+		s.execute(b);
 	}
-	catch (std::exception& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 	try
 	{
-		AForm	f("Primo form", 120, 5);
-		std::cout << f;
-		std::cout << b;
-		b.signForm(f);
-		std::cout << f;
-		AForm	g(f);
-		AForm	h("Invalid form", -1, -3);
+		RobotomyRequestForm	r("prova2");
+		b.signForm(r);
+		r.execute(b);
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}	
+	}
+	try
+	{
+		PresidentialPardonForm	p("offeso");
+		b.signForm(p);
+		p.execute(b);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
