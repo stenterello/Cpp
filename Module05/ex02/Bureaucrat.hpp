@@ -6,13 +6,15 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:54:13 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 16:55:37 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:34:34 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
+class Bureaucrat;
+# include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -29,6 +31,8 @@ class Bureaucrat
 		int			getGrade(void) const;
 		void		incrementGrade(int amount);
 		void		decrementGrade(int amount);
+		void		signForm(AForm & f);
+		void		executeForm(Form const & form);
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -47,6 +51,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream&	operator<<(std::ostream & os, Bureaucrat const & b);
+std::ostream&	operator<<(std::ostream & out, Bureaucrat const & b);
 
 #endif

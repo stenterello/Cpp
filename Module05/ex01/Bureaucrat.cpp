@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:58:29 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/09 16:11:30 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:08:39 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,17 @@ void		Bureaucrat::decrementGrade(int amount)
 			throw Bureaucrat::GradeTooLowException();
 		this->_grade++;
 	}
+}
+
+void		Bureaucrat::signForm(Form & f)
+{
+	if (f.getStatus())
+		std::cout << this->_name << " couldn't sign " << f.getName() << " because form is already signed" << std::endl;
+	else if (this->_grade > f.getMinGradeToSign())
+		std::cout << this->_name << " couldn't sign " << f.getName() << " because bureaucrat grade is too low" << std::endl;
+	else
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	f.beSigned(*this);
 }
 
 std::ostream&	operator<<(std::ostream & os, Bureaucrat const & b)
