@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:03:38 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/10 17:42:38 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:16:31 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	Converter::defineOverflow(std::string s)
 
 void	Converter::strToChar()
 {
+
 	if (this->_char_overflow || this->_nan || this->_inf || this->_minus_inf)
 		std::cout << "char: Impossible" << std::endl;
 	else if (!std::isprint(static_cast<char>(this->_converted)))
@@ -90,28 +91,28 @@ void	Converter::strToInt()
 
 void	Converter::strToFloat()
 {
-	if (this->_float_overflow)
-		std::cout << "float: Impossible" << std::endl;
-	else if (!this->_inf && !this->_minus_inf && !this->_nan)
+	// if (this->_float_overflow)
+	// 	std::cout << "float: Impossible" << std::endl;
+	// else if (!this->_inf && !this->_minus_inf && !this->_nan)
 		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(this->_converted) << "f" << std::endl;
-	else if (this->_inf)
-		std::cout << "float: inf" << "f" << std::endl;
-	else if (this->_minus_inf)
-		std::cout << "float: -inf" << "f" << std::endl;
-	else if (this->_nan)
-		std::cout << "float: nan" << "f" << std::endl;
+	// else if (this->_inf)
+	// 	std::cout << "float: inf" << "f" << std::endl;
+	// else if (this->_minus_inf)
+	// 	std::cout << "float: -inf" << "f" << std::endl;
+	// else if (this->_nan)
+	// 	std::cout << "float: nan" << "f" << std::endl;
 }
 
 void	Converter::strToDouble()
 {
-	if (this->_double_overflow)
-		std::cout << "double: Impossible" << std::endl;
-	else if (!this->_inf && !this->_minus_inf && !this->_nan)
+	// if (this->_double_overflow)
+	// 	std::cout << "double: Impossible" << std::endl;
+	// else if (!this->_inf && !this->_minus_inf && !this->_nan)
 		std::cout << "double: " << this->_converted << std::endl;
-	else if (this->_inf)
-		std::cout << "float: inf" << std::endl;
-	else if (this->_minus_inf)
-		std::cout << "float: -inf" << std::endl;
-	else if (this->_nan)
-		std::cout << "float: nan" << std::endl;
-}
+	// else if (this->_inf)
+	// 	std::cout << "double: inf" << std::endl;
+	// else if (this->_minus_inf)
+	// 	std::cout << "double: -inf" << std::endl;
+	// else if (this->_nan)
+	// 	std::cout << "double: nan" << std::endl;
+} 
