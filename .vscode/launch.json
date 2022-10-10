@@ -5,16 +5,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "(gdb) Launch",
+			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/Module05/ex03/Bureaucrat",
+			"program": "${workspaceFolder}/Module06/ex02/realType",
 			"args": [],
 			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}/Module04/ex03/",
+			"cwd": "${workspaceFolder}/Module06/ex02/",
 			"environment": [],
 			"externalConsole": false,
-			"MIMode": "gdb",
+			"MIMode": "lldb",
 			// "justMyCode": true,
 			// "setupCommands": [
 			// 	{
