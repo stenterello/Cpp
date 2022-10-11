@@ -6,7 +6,7 @@
             "command": "/usr/bin/make",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/Module06/ex02/"
+                "cwd": "${workspaceFolder}/Module06/ex00/"
             },
             "problemMatcher": [
                 "$gcc"

@@ -1,8 +1,7 @@
 NAME	=	convert
 CC		=	c++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98
-SRC		=	main.cpp \
-			Converter.class.cpp
+FLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
+SRC		=	main.cpp
 OBJS	=	$(SRC:.cpp=.o)
 
 $(NAME): $(OBJS)
