@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 16:15:29 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/11 18:08:57 by ddelladi         ###   ########.fr       */
+/*   Created: 2022/10/11 18:11:56 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/10/11 19:12:10 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
-# include <iostream>
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
+# include "Array.tpp"
 
 template <typename T>
-void	iter(T *arr, int arr_size, void (*f)(T const &))
+class Array
 {
-	for (int i = 0; i < arr_size; i++)
-		f(arr[i]);
-}
+	private:
+		T	*_arr;
+		int	_size;
+	public:
+		Array();
+		Array(unsigned int n);
+		Array(Array const & src);
+		Array&	operator=(Array const & rhs);
+		~Array();
+		int	getSize() const;
+};
 
 #endif

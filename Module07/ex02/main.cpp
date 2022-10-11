@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 16:15:29 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/11 18:08:57 by ddelladi         ###   ########.fr       */
+/*   Created: 2022/10/11 18:12:02 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/10/11 18:12:17 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
-# include <iostream>
+#include "Array.hpp"
 
-template <typename T>
-void	iter(T *arr, int arr_size, void (*f)(T const &))
+int	main()
 {
-	for (int i = 0; i < arr_size; i++)
-		f(arr[i]);
+	return (0);
 }
-
-#endif
