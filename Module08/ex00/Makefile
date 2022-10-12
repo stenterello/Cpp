@@ -1,4 +1,4 @@
-NAME	=	Array
+NAME	=	EasyFind
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 SRC		=	main.cpp
