@@ -6,43 +6,63 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:11:53 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/11 19:12:53 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:11:30 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-Array::Array() : _size(0), _arr(NULL)
+template <typename T>
+Array<T>::Array() : _size(0), _arr(NULL)
 {}
 
-Array::Array(unsigned int n) : _size(n)
+template <typename T>
+Array<T>::Array(unsigned int n) : _size(n), _arr(new T[n])
+{}
+
+template <typename T>
+Array<T>::Array(Array const & src) : _size(src.size()), _arr(new T[this->_size])
 {
-	for (int i = 0; i < n; i++)
-		this->_arr[i] = new (T);
+	for (unsigned int i = 0; i < this->_size; i++)
+		this->_arr[i] = src._arr[i];
 }
 
-Array::Array(Array const & src) : _size(src.getSize())
-{
-	for (int i = 0; i < n; i++)
-		this->_arr[i] = new (T);
-	for (int i = 0; i < n; i++)
-		this->_arr[i]
-}
-
-Array&	Array::operator=(Array const & rhs)
+template <typename T>
+Array<T>&	Array<T>::operator=(Array const & rhs)
 {
 	if (this == &rhs)
 		return (*this);
-	this->_size = rhs.getSize();
+	this->_size = rhs.size();
+	for (unsigned int i = 0; i < this->_size; i++)
+		this->_arr[i] == rhs._arr[i];
+	return (*this);
 }
 
-Array::~Array()
+template <typename T>
+Array<T>::~Array()
 {
-	for (int i = 0; i < this->_size; i++)
-		delete this->_arr[i];
+	if (this->_size)
+		delete [] this->_arr;
 }
 
-int	Array::getSize() const
+template <typename T>
+int	Array<T>::size() const
 {
 	return (this->_size);
+}
+
+template <typename T>
+T	Array<T>::getValue(unsigned int idx) const
+{
+	if (this->_size <= idx || idx < 0)
+		throw Array<T>::IndexOutOfBounds();
+	return (this->_arr[idx]);
+}
+
+template <typename T>
+void	Array<T>::setValue(T val, unsigned int idx)
+{
+	if (this->_size <= idx || idx < 0)
+		throw Array<T>::IndexOutOfBounds();
+	this->_arr[idx] = val;
 }
