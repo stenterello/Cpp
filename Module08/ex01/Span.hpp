@@ -6,7 +6,7 @@
 /*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:29:18 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/12 18:15:47 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/15 13:19:27 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Span
 {
 	private:
 		unsigned int		_size;
-		unsigned int		_filled;
 		std::vector<int>	_storage;
 		Span();
 	public:
@@ -30,8 +29,7 @@ class Span
 		void						addNumber(int n);
 		int							shortestSpan();
 		int							longestSpan();
-		int							size() const;
-		std::vector<int>::iterator	getInitialPointer();
+		std::vector<int>	getVector();
 		class AlreadyFilled : std::exception
 		{
 			public:
