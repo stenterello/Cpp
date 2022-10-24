@@ -5,16 +5,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "(lldb) Launch",
+			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/Module08/ex00/Easyfind",
+			"program": "${workspaceFolder}/Module08/ex01/Span",
 			"args": ["0"],
 			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}/Module08/ex00/",
+			"cwd": "${workspaceFolder}/Module08/ex01/",
 			"environment": [],
 			"externalConsole": false,
-			"MIMode": "lldb",
+			"MIMode": "gdb",
 			// "justMyCode": true,
 			// "setupCommands": [
 			// 	{

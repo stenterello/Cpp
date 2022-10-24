@@ -1,6 +1,6 @@
 NAME	=	Span
 CC		=	c++
-FLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
+FLAGS	=	-Wall -Werror -Wextra -std=c++98
 SRC		=	main.cpp
 OBJS	=	$(SRC:.cpp=.o)
 

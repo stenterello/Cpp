@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.tpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:29:21 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/15 13:19:34 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:40:45 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Span::Span(unsigned int n) : _size(n)
 
 Span::Span(Span const & src) : _size(src._size)
 {
+	this->_storage.reserve(this->_size);
 	this->_storage = src._storage;
 }
 
@@ -42,15 +43,57 @@ void	Span::addNumber(int n)
 
 int	Span::shortestSpan()
 {
-	return (1);
+	std::vector<int>			copy;
+	std::vector<int>::iterator	iter;
+	int							ret;
+
+	if (!this->_storage.size())
+		throw Span::SpanIsEmpty();
+	else if (this->_storage.size() == 1)
+		throw Span::OnlyOneStored();
+	copy = this->_storage;
+	std::sort(copy.begin(), copy.end());
+	iter = copy.begin();
+	ret = *(copy.end() - 1) - *copy.begin();
+	++iter;
+	while (iter != copy.end())
+	{
+		if (*iter - *(iter - 1) < ret)
+			ret = *iter - *(iter - 1);
+		iter++;
+	}
+	return (ret);
 }
 
 int	Span::longestSpan()
 {
-	return (1);
+	std::vector<int>			copy;
+
+	if (!this->_storage.size())
+		throw Span::SpanIsEmpty();
+	else if (this->_storage.size() == 1)
+		throw Span::OnlyOneStored();
+	copy = this->_storage;
+	std::sort(copy.begin(), copy.end());
+	return (*(copy.end() - 1) - *copy.begin());
 }
 
-std::vector<int>	Span::getVector()
+std::vector<int>&	Span::getVector()
 {
 	return (this->_storage);
+}
+
+void	Span::crazyAdding()
+{
+	std::vector<int>	tmp;
+
+	tmp.reserve(1000000);
+	for (int i = 0; i < 1000000; i++)
+	{
+		srand((unsigned)time(NULL));
+		tmp.push_back(rand() % 1000000);
+	}
+	if (this->_storage.size() + std::distance(tmp.begin(), tmp.end()) > this->_size)
+		throw Span::AlreadyFilled();
+	this->_storage.insert(this->_storage.begin(), tmp.begin(), tmp.end());
 }

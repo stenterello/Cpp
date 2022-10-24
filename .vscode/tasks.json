@@ -4,9 +4,9 @@
             "type": "cppbuild",
             "label": "C/C++: gcc compila il file attivo",
             "command": "/usr/bin/make",
-            "args": [],
+            "args": ["re"],
             "options": {
-                "cwd": "${workspaceFolder}/Module08/ex00/"
+                "cwd": "${workspaceFolder}/Module08/ex01/"
             },
             "problemMatcher": [
                 "$gcc"

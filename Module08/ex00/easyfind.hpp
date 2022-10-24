@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddelladi <ddelladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddelladi <ddelladi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:16:05 by ddelladi          #+#    #+#             */
-/*   Updated: 2022/10/12 16:16:26 by ddelladi         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:43:01 by ddelladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 # include <iterator>
+# include <algorithm>
 # include <iostream>
 
 class ElementNotFound : public std::exception
